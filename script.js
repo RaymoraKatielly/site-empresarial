@@ -1,53 +1,81 @@
 // =========================
-// Galeria Vanelle - Script
+// Galeria Vanelle - Script (Final)
 // =========================
 
-// 1) Ano no rodapé
 document.addEventListener("DOMContentLoaded", () => {
+  /* =========================
+     1) Ano no rodapé
+  ========================= */
   const y = document.getElementById("year");
   if (y) y.textContent = new Date().getFullYear();
-});
 
-// 2) Menu mobile (abre/fecha)
-document.addEventListener("DOMContentLoaded", () => {
+  /* =========================
+     2) Menu mobile (abre/fecha)
+  ========================= */
   const btn = document.querySelector(".menu-toggle");
   const mobileNav = document.querySelector(".mobile-nav");
 
-  if (!btn || !mobileNav) return;
-
   const closeMenu = () => {
+    if (!btn || !mobileNav) return;
     mobileNav.classList.remove("is-open");
     btn.setAttribute("aria-expanded", "false");
     mobileNav.setAttribute("aria-hidden", "true");
   };
 
-  btn.addEventListener("click", () => {
+  const openMenu = () => {
+    if (!btn || !mobileNav) return;
+    mobileNav.classList.add("is-open");
+    btn.setAttribute("aria-expanded", "true");
+    mobileNav.setAttribute("aria-hidden", "false");
+  };
+
+  const toggleMenu = () => {
+    if (!btn || !mobileNav) return;
     const isOpen = mobileNav.classList.toggle("is-open");
     btn.setAttribute("aria-expanded", String(isOpen));
     mobileNav.setAttribute("aria-hidden", String(!isOpen));
-  });
+  };
 
-  // Fecha ao clicar em qualquer link
-  mobileNav.querySelectorAll("a").forEach((a) => {
-    a.addEventListener("click", closeMenu);
-  });
+  if (btn && mobileNav) {
+    // estado inicial acessível
+    btn.setAttribute("aria-expanded", "false");
+    mobileNav.setAttribute("aria-hidden", "true");
 
-  // Fecha com ESC
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") closeMenu();
-  });
-});
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      toggleMenu();
+    });
 
-// 3) Filtro de "Profissionais & Negócios"
-document.addEventListener("DOMContentLoaded", () => {
+    // Fecha ao clicar em qualquer link do menu
+    mobileNav.querySelectorAll("a").forEach((a) => {
+      a.addEventListener("click", closeMenu);
+    });
+
+    // Fecha ao clicar fora (boa UX)
+    document.addEventListener("click", (e) => {
+      const target = e.target;
+      const clickedInsideNav = mobileNav.contains(target);
+      const clickedButton = btn.contains(target);
+      const isOpen = mobileNav.classList.contains("is-open");
+
+      if (isOpen && !clickedInsideNav && !clickedButton) closeMenu();
+    });
+
+    // Fecha com ESC
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeMenu();
+    });
+  }
+
+  /* =========================
+     3) Filtro "Profissionais & Negócios"
+  ========================= */
   const filters = document.querySelectorAll(".filter");
   const cards = document.querySelectorAll(".biz-card");
 
-  if (!filters.length || !cards.length) return;
-
-  const setActive = (btn) => {
+  const setActive = (activeBtn) => {
     filters.forEach((f) => f.classList.remove("is-active"));
-    btn.classList.add("is-active");
+    activeBtn.classList.add("is-active");
   };
 
   const applyFilter = (category) => {
@@ -58,43 +86,59 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   };
 
-  filters.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const category = btn.getAttribute("data-filter");
-      setActive(btn);
-      applyFilter(category);
+  if (filters.length && cards.length) {
+    filters.forEach((fbtn) => {
+      fbtn.addEventListener("click", () => {
+        const category = fbtn.getAttribute("data-filter") || "todos";
+        setActive(fbtn);
+        applyFilter(category);
+      });
     });
-  });
-});
+  }
 
-// 4) Links do WhatsApp / Instagram (placeholders centralizados)
-// Troque APENAS aqui depois, para atualizar o site todo.
-document.addEventListener("DOMContentLoaded", () => {
-  // Substitua pelo número real no formato internacional: 55DDDNÚMERO
-  const WHATS_NUMBER = "5599999999999"; // <-- TROCAR
+  /* =========================
+     4) Links WhatsApp / Instagram (centralizado)
+     Troque APENAS aqui depois para atualizar tudo.
+  ========================= */
+  const WHATS_NUMBER = "5599999999999"; // <-- TROCAR (55 + DDD + número)
   const INSTAGRAM_URL = "https://instagram.com/seuinstagram"; // <-- TROCAR
 
-  const msgDefault = "Olá! Vim pelo site da Galeria Vanelle e gostaria de informações.";
-  const msgLocacao = "Olá! Vim pelo site da Galeria Vanelle e gostaria de informações sobre locação de sala.";
-
-  // Botão principal de WhatsApp (Contato)
-  const whatsBtn = document.getElementById("whatsBtn");
-  // Botão flutuante
-  const floatWhats = document.getElementById("floatWhats");
-  // Instagram
-  const instaLink = document.getElementById("instaLink");
+  const msgDefault =
+    "Olá! Vim pelo site da Galeria Vanelle e gostaria de informações.";
+  const msgLocacao =
+    "Olá! Vim pelo site da Galeria Vanelle e gostaria de informações sobre locação de sala.";
 
   const buildWhatsLink = (message) => {
     const encoded = encodeURIComponent(message);
+    // se ainda estiver placeholder, manda pro WhatsApp web "genérico" pra não quebrar
+    if (!WHATS_NUMBER || WHATS_NUMBER.includes("999999")) {
+      return `https://wa.me/?text=${encoded}`;
+    }
     return `https://wa.me/${WHATS_NUMBER}?text=${encoded}`;
   };
+
+  const whatsBtn = document.getElementById("whatsBtn");
+  const floatWhats = document.getElementById("floatWhats");
+  const instaLink = document.getElementById("instaLink");
 
   if (whatsBtn) whatsBtn.href = buildWhatsLink(msgDefault);
   if (floatWhats) floatWhats.href = buildWhatsLink(msgDefault);
   if (instaLink) instaLink.href = INSTAGRAM_URL;
 
-  // Exemplo: se você quiser um link específico de locação no futuro,
-  // crie um botão com id="rentBtn" e use:
+  // Se você criar botões/links específicos no HTML, basta usar estes ids:
+  // - id="rentBtn" para locação
+  // - id="rentBtn2" (ou outros) se quiser mais de um
   const rentBtn = document.getElementById("rentBtn");
+  const rentBtn2 = document.getElementById("rentBtn2");
+
   if (rentBtn) rentBtn.href = buildWhatsLink(msgLocacao);
+  if (rentBtn2) rentBtn2.href = buildWhatsLink(msgLocacao);
+
+  // Acessibilidade/UX: se o botão de WhatsApp estiver dentro do menu mobile,
+  // ao clicar ele fecha o menu antes de navegar.
+  if (mobileNav) {
+    mobileNav.querySelectorAll("a.btn").forEach((a) => {
+      a.addEventListener("click", closeMenu);
+    });
+  }
 });
