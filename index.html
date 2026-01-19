@@ -1,303 +1,433 @@
-<!doctype html>
-<html lang="pt-br">
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Vanélle Concept • Site Empresarial</title>
-  <meta name="description" content="Vanélle Concept — elegância atemporal e dinamismo contemporâneo. Site empresarial institucional." />
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Galeria Vanelle | Espaço Empresarial</title>
+  <meta name="description" content="Galeria Vanelle: espaço empresarial com salas para profissionais. Beleza, bem-estar e serviços em um só lugar. Aluguel de salas e estrutura completa para empreender." />
+  <meta name="theme-color" content="#c97b6b" />
 
-  <!-- Fontes de apoio (web-safe). A fonte principal do manual (AT Sackers Gothic) pode ser adicionada via @font-face quando você tiver o arquivo. -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
+  <!-- Topbar -->
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <p class="topbar-text">
+        <strong>Galeria Vanelle</strong> • Espaço empresarial com salas para profissionais
+      </p>
+      <div class="topbar-actions">
+        <a class="chip" href="#empreenda">Alugar sala</a>
+        <a class="chip chip-outline" href="#contato">Contato</a>
+      </div>
+    </div>
+  </div>
+
   <!-- Header -->
-  <header class="header" id="topo">
-    <div class="container header__inner">
-      <a class="brand" href="#topo" aria-label="Ir para o topo">
-        <span class="brand__mark" aria-hidden="true">a</span>
-        <span class="brand__text">
-          <span class="brand__name">Vanélle</span>
-          <span class="brand__sub">CONCEPT</span>
-        </span>
+  <header class="header">
+    <div class="container header-inner">
+      <a class="brand" href="#inicio" aria-label="Galeria Vanelle - Início">
+        <div class="brand-mark" aria-hidden="true">V</div>
+        <div class="brand-text">
+          <span class="brand-title">Galeria Vanelle</span>
+          <span class="brand-subtitle">Espaço empresarial • Beleza • Bem-estar</span>
+        </div>
       </a>
 
-      <button class="burger" type="button" aria-label="Abrir menu" aria-expanded="false" data-burger>
+      <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
 
-      <nav class="nav" data-nav>
-        <a href="#sobre">Sobre</a>
-        <a href="#diferenciais">Diferenciais</a>
-        <a href="#servicos">Serviços</a>
-        <a href="#metodo">Etapas</a>
-        <a href="#contato" class="nav__cta">Contato</a>
+      <nav class="nav" role="navigation" aria-label="Menu principal">
+        <a href="#galeria">A Galeria</a>
+        <a href="#negocios">Profissionais & Negócios</a>
+        <a href="#empreenda">Empreenda aqui</a>
+        <a href="#duvidas">Dúvidas</a>
+        <a href="#contato" class="btn btn-primary">Falar no WhatsApp</a>
       </nav>
+    </div>
+
+    <!-- Mobile nav -->
+    <div class="mobile-nav" aria-hidden="true">
+      <div class="container mobile-nav-inner">
+        <a href="#galeria">A Galeria</a>
+        <a href="#negocios">Profissionais & Negócios</a>
+        <a href="#empreenda">Empreenda aqui</a>
+        <a href="#duvidas">Dúvidas</a>
+        <a href="#contato" class="btn btn-primary w-100">Falar no WhatsApp</a>
+      </div>
     </div>
   </header>
 
   <!-- Hero -->
-  <section class="hero">
-    <div class="container hero__inner">
-      <div class="hero__content">
-        <p class="pill">Site Empresarial • Institucional Premium</p>
-
-        <h1 class="h1">
-          Elegância atemporal,<br />
-          <span class="h1__accent">dinamismo contemporâneo.</span>
-        </h1>
-
+  <main id="inicio" class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <p class="pill">📍 Um único lugar, várias experiências</p>
+        <h1>Um <span class="accent">espaço empresarial</span> completo para clientes e profissionais.</h1>
         <p class="lead">
-          A Vanélle Concept nasce do equilíbrio perfeito entre estética sofisticada e experiência acolhedora.
-          Um espaço onde cada detalhe comunica valor, intenção e excelência.
+          A <strong>Galeria Vanelle</strong> reúne negócios independentes em um ambiente planejado:
+          beleza, bem-estar e serviços com estrutura, conforto e credibilidade.
         </p>
 
-        <div class="hero__actions">
-          <a class="btn btn--primary" href="#contato">Agendar atendimento</a>
-          <a class="btn btn--ghost" href="#servicos">Ver serviços</a>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#contato">Agendar / Contato</a>
+          <a class="btn btn-outline" href="#empreenda">Quero alugar uma sala</a>
         </div>
 
-        <div class="hero__stats">
+        <div class="hero-stats">
           <div class="stat">
-            <span class="stat__k">Premium</span>
-            <span class="stat__t">Experiência exclusiva</span>
+            <span class="stat-number">+X</span>
+            <span class="stat-label">salas e negócios</span>
           </div>
           <div class="stat">
-            <span class="stat__k">Identidade</span>
-            <span class="stat__t">Coerência visual total</span>
+            <span class="stat-number">100%</span>
+            <span class="stat-label">foco em experiência</span>
           </div>
           <div class="stat">
-            <span class="stat__k">Presença</span>
-            <span class="stat__t">Marca forte no digital</span>
+            <span class="stat-number">Local</span>
+            <span class="stat-label">bem localizado</span>
           </div>
         </div>
+
+        <p class="note">
+          *Dados e contatos no exemplo são placeholders. Substitua pelos oficiais da Galeria.
+        </p>
       </div>
 
-      <aside class="hero__media" aria-label="Imagem de destaque">
-        <!-- Troque pela foto real (ex: assets/hero.jpg). -->
-        <div class="hero__image" role="img" aria-label="Imagem conceitual Vanélle Concept"></div>
-
-        <div class="hero__badge">
-          <p class="hero__badgeTitle">Assinatura da marca</p>
-          <p class="hero__badgeText">
-            O “a” estilizado representa sofisticação e exclusividade — uma marca sempre à frente.
-          </p>
+      <div class="hero-media">
+        <div class="hero-card">
+          <div class="hero-img" role="img" aria-label="Foto do espaço da Galeria Vanelle"></div>
+          <div class="hero-card-body">
+            <h3>Estrutura pronta para empreender</h3>
+            <p>
+              Salas para profissionais, ambientes organizados e uma marca que fortalece todos os negócios
+              dentro da Galeria.
+            </p>
+          </div>
         </div>
-      </aside>
-    </div>
-  </section>
 
-  <!-- Sobre -->
-  <section class="section" id="sobre">
-    <div class="container split">
-      <div>
-        <h2 class="h2">Sobre a Vanélle Concept</h2>
-        <p class="text">
-          A identidade da Vanélle Concept é construída para envolver: tons terrosos profundos, beges quentes e acentos dourados
-          criam uma aura de luxo acolhedor — transmitindo solidez, confiança e uma beleza que perdura.
-        </p>
-
-        <p class="text">
-          Aqui, estética e estratégia caminham juntas. O objetivo é elevar a percepção da marca em cada ponto de contato:
-          atendimento, ambiente e presença digital.
-        </p>
-
-        <div class="tags">
-          <span class="tag">Sofisticação</span>
-          <span class="tag">Exclusividade</span>
-          <span class="tag">Experiência</span>
-          <span class="tag">Autoridade</span>
+        <div class="hero-badges">
+          <span class="badge">Ambiente climatizado*</span>
+          <span class="badge">Recepção/organização*</span>
+          <span class="badge">Identidade empresarial*</span>
         </div>
-      </div>
-
-      <div class="card">
-        <h3 class="h3">Posicionamento</h3>
-        <p class="text text--muted">
-          Uma marca premium não se explica com excesso. Ela se sente no silêncio do design,
-          no cuidado do texto e na intenção de cada detalhe.
-        </p>
-
-        <div class="divider"></div>
-
-        <ul class="check">
-          <li>Layout clean e refinado</li>
-          <li>Tipografia com presença</li>
-          <li>Paleta oficial aplicada</li>
-          <li>Responsivo e elegante</li>
-        </ul>
       </div>
     </div>
-  </section>
+  </main>
 
-  <!-- Diferenciais -->
-  <section class="section section--dark" id="diferenciais">
+  <!-- Section: A Galeria -->
+  <section id="galeria" class="section">
     <div class="container">
-      <header class="section__head">
-        <h2 class="h2 h2--light">Diferenciais</h2>
-        <p class="text text--light">
-          O site é pensado como extensão da marca: identidade, linguagem e experiência alinhadas.
-        </p>
-      </header>
-
-      <div class="grid3">
-        <article class="feature">
-          <h3 class="h3 h3--light">Identidade visual integral</h3>
-          <p class="text text--lightDim">
-            Cores oficiais, atmosfera premium, contrastes suaves e coerência estética em todas as páginas.
-          </p>
-        </article>
-
-        <article class="feature">
-          <h3 class="h3 h3--light">Tom de marca</h3>
-          <p class="text text--lightDim">
-            Linguagem sofisticada, sensorial e objetiva — sem “cara de template”.
-          </p>
-        </article>
-
-        <article class="feature">
-          <h3 class="h3 h3--light">Experiência e performance</h3>
-          <p class="text text--lightDim">
-            Navegação intuitiva, responsividade total e microinterações discretas.
-          </p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- Serviços -->
-  <section class="section" id="servicos">
-    <div class="container">
-      <header class="section__head">
-        <h2 class="h2">Serviços</h2>
-        <p class="text">
-          Uma apresentação objetiva, com foco em valor percebido, experiência e exclusividade.
-        </p>
-      </header>
-
-      <div class="grid4">
-        <article class="service">
-          <p class="service__k">01</p>
-          <h3 class="h3">Atendimentos premium</h3>
-          <p class="text text--muted">Atendimento exclusivo, focado em excelência, cuidado e sofisticação.</p>
-        </article>
-
-        <article class="service">
-          <p class="service__k">02</p>
-          <h3 class="h3">Experiência de marca</h3>
-          <p class="text text--muted">Cada detalhe é pensado para elevar a percepção e fortalecer a autoridade.</p>
-        </article>
-
-        <article class="service">
-          <p class="service__k">03</p>
-          <h3 class="h3">Formações e cursos</h3>
-          <p class="text text--muted">Estrutura para divulgar turmas, datas, vagas e diferenciais (quando aplicável).</p>
-        </article>
-
-        <article class="service">
-          <p class="service__k">04</p>
-          <h3 class="h3">Conteúdo & Portfólio</h3>
-          <p class="text text--muted">Galeria para fotos e provas sociais com estética premium.</p>
-        </article>
-      </div>
-
-      <div class="notice">
+      <header class="section-head">
+        <h2>A Galeria Vanelle</h2>
         <p>
-          <strong>Observação:</strong> no site final, você pode substituir estes cards pelos serviços reais (da Mirelle)
-          e adicionar botões específicos para cada atendimento.
+          A Vanelle é um espaço físico com modelo empresarial: <strong>locação de salas</strong> para
+          profissionais e empresas independentes, tudo dentro de uma estrutura única.
         </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Método (Proposta / Etapas) -->
-  <section class="section" id="metodo">
-    <div class="container">
-      <header class="section__head">
-        <h2 class="h2">Etapas do desenvolvimento</h2>
-        <p class="text">Modelo profissional por etapas, igual ao descrito na proposta.</p>
       </header>
 
-      <div class="accordion" data-accordion>
-        <button class="acc__btn" type="button" aria-expanded="true">
-          1) Apresentação do site teste <span class="acc__icon" aria-hidden="true">+</span>
-        </button>
-        <div class="acc__panel">
-          <p class="text">Entrega do modelo inicial com a identidade visual aplicada e estrutura institucional.</p>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Conceito</h3>
+          <p>
+            Um ambiente onde clientes encontram diversos serviços em um único lugar — e onde profissionais
+            encontram uma base sólida para empreender com credibilidade.
+          </p>
+          <ul class="list">
+            <li>Negócios independentes (cada sala é uma empresa)</li>
+            <li>Organização e padrão visual unificado</li>
+            <li>Experiência premium para o cliente</li>
+          </ul>
         </div>
 
-        <button class="acc__btn" type="button" aria-expanded="false">
-          2) Alinhamento visual e conceitual <span class="acc__icon" aria-hidden="true">+</span>
-        </button>
-        <div class="acc__panel" hidden>
-          <p class="text">Ajustes de layout, tom, hierarquia e conteúdo com base no feedback.</p>
-        </div>
-
-        <button class="acc__btn" type="button" aria-expanded="false">
-          3) Ajustes e refinamentos <span class="acc__icon" aria-hidden="true">+</span>
-        </button>
-        <div class="acc__panel" hidden>
-          <p class="text">Refino premium: espaçamentos, detalhes, consistência e microinterações.</p>
-        </div>
-
-        <button class="acc__btn" type="button" aria-expanded="false">
-          4) Validação final <span class="acc__icon" aria-hidden="true">+</span>
-        </button>
-        <div class="acc__panel" hidden>
-          <p class="text">Checklist final + aprovação para entrega e publicação.</p>
-        </div>
-
-        <button class="acc__btn" type="button" aria-expanded="false">
-          5) Entrega do site definitivo <span class="acc__icon" aria-hidden="true">+</span>
-        </button>
-        <div class="acc__panel" hidden>
-          <p class="text">Entrega do site final conforme escopo acordado, pronto para domínio/hospedagem.</p>
+        <div class="card card-media">
+          <div class="media" aria-label="Imagem do interior da galeria" role="img"></div>
+          <div class="card-foot">
+            <p class="muted">Troque estas imagens por fotos reais do espaço: recepção, corredores e salas.</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA Contato -->
-  <section class="cta" id="contato">
-    <div class="container cta__inner">
-      <div>
-        <h2 class="h2 h2--light">Vamos elevar a presença digital da Vanélle Concept</h2>
-        <p class="text text--lightDim">
-          Atendimento exclusivo e comunicação premium — do primeiro clique ao agendamento.
-        </p>
+  <!-- Section: Profissionais & Negócios -->
+  <section id="negocios" class="section section-alt">
+    <div class="container">
+      <header class="section-head">
+        <h2>Profissionais & Negócios</h2>
+        <p>Conheça alguns serviços e empresas que atendem dentro da Galeria Vanelle.</p>
+      </header>
+
+      <div class="filters">
+        <button class="filter is-active" data-filter="todos">Todos</button>
+        <button class="filter" data-filter="beleza">Beleza</button>
+        <button class="filter" data-filter="cabelo">Cabelo</button>
+        <button class="filter" data-filter="unhas">Unhas</button>
+        <button class="filter" data-filter="maquiagem">Maquiagem</button>
+        <button class="filter" data-filter="saude">Saúde & Bem-estar</button>
       </div>
 
-      <div class="cta__card">
-        <h3 class="h3">Contato</h3>
+      <div class="cards-grid" id="businessGrid">
+        <!-- Exemplos (edite nomes/descrições conforme realidade) -->
+        <article class="biz-card" data-category="saude">
+          <div class="biz-icon" aria-hidden="true">🧠</div>
+          <h3>Psicologia</h3>
+          <p>Atendimentos com acolhimento, ética e profissionalismo. (placeholder)</p>
+          <div class="biz-actions">
+            <a href="#contato" class="link">Agendar</a>
+            <span class="tag">Saúde</span>
+          </div>
+        </article>
 
-        <!-- Troque pelos dados reais -->
-        <p class="text text--muted">
-          WhatsApp: <strong>(66) 9 0000-0000</strong><br />
-          Instagram: <strong>@vanelleconcept</strong><br />
-          Cidade: <strong>Água Boa - MT</strong>
-        </p>
+        <article class="biz-card" data-category="unhas">
+          <div class="biz-icon" aria-hidden="true">💅</div>
+          <h3>Manicure</h3>
+          <p>Cuidados com as unhas, alongamentos e finalizações. (placeholder)</p>
+          <div class="biz-actions">
+            <a href="#contato" class="link">Agendar</a>
+            <span class="tag">Unhas</span>
+          </div>
+        </article>
 
-        <a class="btn btn--primary btn--full" target="_blank"
-          href="https://wa.me/5566900000000?text=Ol%C3%A1!%20Quero%20agendar%20um%20atendimento%20na%20Van%C3%A9lle%20Concept.">
-l">
-          Chamar no WhatsApp
-        </a>
+        <article class="biz-card" data-category="maquiagem">
+          <div class="biz-icon" aria-hidden="true">💄</div>
+          <h3>Maquiagem</h3>
+          <p>Produções sociais e eventos, com acabamento profissional. (placeholder)</p>
+          <div class="biz-actions">
+            <a href="#contato" class="link">Agendar</a>
+            <span class="tag">Make</span>
+          </div>
+        </article>
 
-        <p class="tiny">
-          *No site final, dá pra integrar formulário, Google Maps e botões por serviço.
+        <article class="biz-card" data-category="beleza">
+          <div class="biz-icon" aria-hidden="true">✨</div>
+          <h3>Estética</h3>
+          <p>Cuidados com pele e bem-estar, com foco em autoestima. (placeholder)</p>
+          <div class="biz-actions">
+            <a href="#contato" class="link">Agendar</a>
+            <span class="tag">Beleza</span>
+          </div>
+        </article>
+
+        <article class="biz-card" data-category="cabelo">
+          <div class="biz-icon" aria-hidden="true">💇‍♀️</div>
+          <h3>Salão Morena Rosa</h3>
+          <p>Serviços de cabelo e beleza em um ambiente dentro da Galeria. (placeholder)</p>
+          <div class="biz-actions">
+            <a href="#contato" class="link">Agendar</a>
+            <span class="tag">Cabelo</span>
+          </div>
+        </article>
+
+        <article class="biz-card" data-category="cabelo">
+          <div class="biz-icon" aria-hidden="true">💇‍♂️</div>
+          <h3>Salão (Studio)</h3>
+          <p>Atendimento especializado em cortes e procedimentos. (placeholder)</p>
+          <div class="biz-actions">
+            <a href="#contato" class="link">Agendar</a>
+            <span class="tag">Cabelo</span>
+          </div>
+        </article>
+      </div>
+
+      <div class="hint">
+        <p class="muted">
+          Dica: quando você tiver a lista real de salas, eu adapto essa seção para ter
+          “página interna” de cada negócio (com WhatsApp próprio e horários).
         </p>
       </div>
     </div>
   </section>
 
+  <!-- Section: Empreenda -->
+  <section id="empreenda" class="section">
+    <div class="container">
+      <header class="section-head">
+        <h2>Empreenda na Vanelle</h2>
+        <p>
+          Quer atuar em um espaço estruturado e com identidade empresarial?
+          A Galeria Vanelle oferece locação de salas para profissionais.
+        </p>
+      </header>
+
+      <div class="grid-2">
+        <div class="card">
+          <h3>Para quem é</h3>
+          <ul class="list">
+            <li>Profissionais de beleza, estética e bem-estar</li>
+            <li>Empresárias que querem um local organizado e pronto</li>
+            <li>Quem busca atendimento em um ambiente de alto padrão</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Benefícios do espaço</h3>
+          <ul class="list">
+            <li>Ambiente com padrão visual e credibilidade</li>
+            <li>Fluxo de clientes por ser um polo de serviços</li>
+            <li>Localização e estrutura (adaptar com a realidade)</li>
+          </ul>
+
+          <div class="card-cta">
+            <a class="btn btn-primary" href="#contato">Quero informações sobre locação</a>
+            <p class="muted small">Você pode direcionar para WhatsApp com mensagem pronta.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Depoimentos -->
+  <section class="section section-alt">
+    <div class="container">
+      <header class="section-head">
+        <h2>O que dizem</h2>
+        <p>Prova social aumenta a confiança do cliente e também atrai novas profissionais.</p>
+      </header>
+
+      <div class="testimonials">
+        <figure class="quote">
+          <blockquote>“Ambiente impecável e atendimento excelente. Recomendo!”</blockquote>
+          <figcaption>— Depoimento (placeholder)</figcaption>
+        </figure>
+
+        <figure class="quote">
+          <blockquote>“A galeria é organizada e traz uma experiência completa.”</blockquote>
+          <figcaption>— Depoimento (placeholder)</figcaption>
+        </figure>
+
+        <figure class="quote">
+          <blockquote>“Trabalhar aqui valorizou meu serviço e minha imagem profissional.”</blockquote>
+          <figcaption>— Profissional parceira (placeholder)</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: FAQ -->
+  <section id="duvidas" class="section">
+    <div class="container">
+      <header class="section-head">
+        <h2>Dúvidas frequentes</h2>
+        <p>Informações rápidas para clientes e profissionais interessadas.</p>
+      </header>
+
+      <div class="faq">
+        <details>
+          <summary>A Galeria Vanelle é um salão?</summary>
+          <p>
+            Não. A Vanelle é um <strong>espaço empresarial</strong> que reúne negócios independentes.
+            Dentro dela existem salas e empresas que atendem em áreas diferentes.
+          </p>
+        </details>
+
+        <details>
+          <summary>Como funciona o aluguel de salas?</summary>
+          <p>
+            As salas são locadas para profissionais/empresas, mediante disponibilidade e condições do espaço.
+            Para informações completas, fale com a administração pelo WhatsApp.
+          </p>
+        </details>
+
+        <details>
+          <summary>Como eu agendo um serviço?</summary>
+          <p>
+            Você pode falar pelo WhatsApp da Galeria (ou, se preferir, diretamente com o negócio desejado).
+            Aqui no site, vamos centralizar o contato e direcionar conforme a sua necessidade.
+          </p>
+        </details>
+
+        <details>
+          <summary>Quais serviços existem dentro da Galeria?</summary>
+          <p>
+            Beleza, estética, unhas, maquiagem, cabelo e serviços de bem-estar (ex.: psicologia).
+            A lista pode crescer, então o site é feito para escalar.
+          </p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Contato -->
+  <section id="contato" class="section section-contact">
+    <div class="container contact-grid">
+      <div class="contact-card">
+        <h2>Contato</h2>
+        <p class="lead">
+          Fale com a Galeria Vanelle e receba orientações sobre serviços, horários ou locação de salas.
+        </p>
+
+        <div class="contact-actions">
+          <!-- Substitua o número e a mensagem -->
+          <a class="btn btn-primary" id="whatsBtn" href="#" target="_blank" rel="noopener">
+            WhatsApp da Galeria
+          </a>
+          <a class="btn btn-outline" href="#" id="instaLink" target="_blank" rel="noopener">
+            Instagram
+          </a>
+        </div>
+
+        <div class="contact-info">
+          <p><strong>Endereço:</strong> <span class="muted">Rua/Av (placeholder), Cidade - UF</span></p>
+          <p><strong>Horário:</strong> <span class="muted">Seg–Sex 08h–18h (placeholder)</span></p>
+          <p><strong>E-mail:</strong> <span class="muted">contato@seudominio.com (placeholder)</span></p>
+        </div>
+
+        <p class="muted small">
+          *Depois que o domínio estiver configurado, eu ajusto tudo para ficar profissional com e-mails do domínio.
+        </p>
+      </div>
+
+      <div class="map-card">
+        <div class="map-head">
+          <h3>Localização</h3>
+          <p class="muted">Cole aqui o embed do Google Maps quando tiver o link oficial.</p>
+        </div>
+
+        <div class="map-embed" aria-label="Mapa (placeholder)">
+          <div class="map-placeholder">
+            <p><strong>Mapa</strong></p>
+            <p class="muted">Substitua por um iframe do Google Maps</p>
+          </div>
+        </div>
+
+        <div class="map-foot">
+          <a class="link" href="#galeria">Voltar ao topo</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer class="footer">
-    <div class="container footer__inner">
-      <p class="tiny">© <span id="year"></span> Vanélle Concept. Todos os direitos reservados.</p>
-      <p class="tiny">Desenvolvido por <strong>Raymora Katielle</strong> • Desenvolvimento Web & Soluções Digitais</p>
+    <div class="container footer-inner">
+      <div>
+        <p class="footer-title">Galeria Vanelle</p>
+        <p class="muted">Espaço empresarial com salas para profissionais.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#galeria">A Galeria</a>
+        <a href="#negocios">Profissionais</a>
+        <a href="#empreenda">Locação</a>
+        <a href="#contato">Contato</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p class="muted small">© <span id="year"></span> Galeria Vanelle. Todos os direitos reservados.</p>
     </div>
   </footer>
+
+  <!-- Floating WhatsApp -->
+  <a class="float-whats" id="floatWhats" href="#" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+    💬
+  </a>
 
   <script src="script.js"></script>
 </body>
