@@ -100,22 +100,22 @@ document.addEventListener("DOMContentLoaded", () => {
      4) Links WhatsApp / Instagram (centralizado)
      Troque APENAS aqui depois para atualizar tudo.
   ========================= */
-  const WHATS_NUMBER = "5599999999999"; // <-- TROCAR (55 + DDD + número)
-  const INSTAGRAM_URL = "https://instagram.com/seuinstagram"; // <-- TROCAR
+ document.addEventListener("DOMContentLoaded", () => {
+  const WHATS_NUMBER = "556699143397"; // 55 + DDD + número
+  const INSTAGRAM_URL = "https://instagram.com/morenarosaartebeleza";
 
-  const msgDefault =
+  const message =
     "Olá! Vim pelo site da Galeria Vanelle e gostaria de informações.";
-  const msgLocacao =
-    "Olá! Vim pelo site da Galeria Vanelle e gostaria de informações sobre locação de sala.";
 
-  const buildWhatsLink = (message) => {
-    const encoded = encodeURIComponent(message);
-    // se ainda estiver placeholder, manda pro WhatsApp web "genérico" pra não quebrar
-    if (!WHATS_NUMBER || WHATS_NUMBER.includes("999999")) {
-      return `https://wa.me/?text=${encoded}`;
-    }
-    return `https://wa.me/${WHATS_NUMBER}?text=${encoded}`;
-  };
+  const whatsLink =
+    "https://wa.me/" + WHATS_NUMBER + "?text=" + encodeURIComponent(message);
+
+  const whatsBtn = document.getElementById("whatsBtn");
+  const instaLink = document.getElementById("instaLink");
+
+  if (whatsBtn) whatsBtn.href = whatsLink;
+  if (instaLink) instaLink.href = INSTAGRAM_URL;
+});
 
   const whatsBtn = document.getElementById("whatsBtn");
   const floatWhats = document.getElementById("floatWhats");
