@@ -708,6 +708,42 @@ details p{
   .hero-img{ height:240px; }
 }
 
+/* ===== FIX MENU MOBILE (iPhone/Safari) ===== */
+.menu-toggle{
+  -webkit-appearance: none;
+  appearance: none;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.85);
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: none;              /* desktop escondido */
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  cursor: pointer;
+}
+
+.menu-toggle span{
+  display: block;
+  width: 18px;                /* largura fixa */
+  height: 2px;                /* altura fixa */
+  background: #333;
+  border-radius: 2px;
+  margin: 0;                  /* evita bug de margem no Safari */
+}
+
+.menu-toggle span + span{
+  margin-top: 5px;            /* espaço fixo entre linhas */
+}
+
+/* mostrar o botão só no mobile */
+@media (max-width: 860px){
+  .menu-toggle{
+    display: inline-flex;
+  }
+}
+
 /* ========================
    Fim do style.css
    ======================== */
