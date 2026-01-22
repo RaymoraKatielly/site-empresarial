@@ -309,7 +309,7 @@ img{ max-width:100%; display:block; }
   gap:1rem;
 }
 .hero-card{
-  background:rgba(255,255,255,.65);
+  background:rgba(255,255,255,.75);
   border:1px solid var(--border);
   border-radius: var(--radius);
   overflow:hidden;
@@ -703,6 +703,11 @@ details p{
   .cards-grid{ grid-template-columns: 1fr; }
   .btn{ width:auto; }
 }
+
+@media (max-width: 560px){
+  .hero-img{ height:240px; }
+}
+
 /* ========================
    Fim do style.css
    ======================== */
