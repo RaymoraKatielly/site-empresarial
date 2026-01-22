@@ -744,6 +744,10 @@ details p{
   }
 }
 
+.header-inner{
+  align-items: center;
+}
+
 /* ========================
    Fim do style.css
    ======================== */
