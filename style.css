@@ -315,29 +315,17 @@ img{ max-width:100%; display:block; }
   overflow:hidden;
   box-shadow: var(--shadow);
 }
-.hero-img{
-  height:190px;
-  position:relative;
+.hero-logo-wrap{
   display:flex;
-  align-items:center;
   justify-content:center;
-  background:
-    linear-gradient(135deg, rgba(134,88,51,.22), rgba(0,0,0,0)),
-    url("fotos/logo-vanelle.png");
-  background-size:cover;
-  background-position:center;
+  padding:1rem;
 }
 
 .hero-logo{
-  max-width:180px;
-  width:70%;
+  max-width:160px;
+  width:100%;
   height:auto;
   object-fit:contain;
-  background:rgba(255,255,255,.75);
-  border:1px solid var(--border);
-  border-radius:16px;
-  padding:.6rem .8rem;
-  box-shadow:0 10px 22px rgba(0,0,0,.10);
 }
 
 .hero-card-body{
