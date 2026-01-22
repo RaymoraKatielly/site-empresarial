@@ -744,6 +744,12 @@ details p{
   .menu-toggle{ display: inline-flex; }
 }
 
+.header-inner,
+.navbar,
+.header-bar{
+  align-items: center;
+}
+
 /* ========================
    Fim do style.css
    ======================== */
