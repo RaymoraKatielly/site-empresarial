@@ -708,44 +708,40 @@ details p{
   .hero-img{ height:240px; }
 }
 
-/* ===== FIX MENU MOBILE (iPhone/Safari) ===== */
+/* ===== MENU MOBILE - FIX DEFINITIVO (Safari/iPhone) ===== */
 .menu-toggle{
   -webkit-appearance: none;
   appearance: none;
   border: 1px solid var(--border);
-  background: rgba(255,255,255,.85);
+  background: rgba(255,255,255,.88);
   width: 44px;
   height: 44px;
   border-radius: 12px;
-  display: none;              /* desktop escondido */
+  padding: 0;
+  display: none; /* aparece só no mobile */
   align-items: center;
   justify-content: center;
-  padding: 0;
   cursor: pointer;
+  line-height: 0;
 }
 
-.menu-toggle span{
+.menu-icon{
+  width: 22px;
+  height: 22px;
   display: block;
-  width: 18px;                /* largura fixa */
-  height: 2px;                /* altura fixa */
-  background: #333;
-  border-radius: 2px;
-  margin: 0;                  /* evita bug de margem no Safari */
 }
 
-.menu-toggle span + span{
-  margin-top: 5px;            /* espaço fixo entre linhas */
+.menu-icon path{
+  stroke: #2b2b2b;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
 }
 
-/* mostrar o botão só no mobile */
+/* mostrar o botão no mobile */
 @media (max-width: 860px){
-  .menu-toggle{
-    display: inline-flex;
-  }
-}
-
-.header-inner{
-  align-items: center;
+  .menu-toggle{ display: inline-flex; }
 }
 
 /* ========================
