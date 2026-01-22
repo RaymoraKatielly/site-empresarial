@@ -758,6 +758,38 @@ details p{
 .ecosystem h2{
   margin-bottom:.5rem;
 }
+/* ===== HOTFIX: impedir seções virarem colunas ===== */
+.section,
+.section-alt,
+.container {
+  display: block;
+}
+
+/* grids só nas classes específicas */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.testimonials {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+/* responsivo */
+@media (max-width: 860px) {
+  .grid-2 { grid-template-columns: 1fr; }
+  .testimonials { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; }
+}
 /* ========================
    Fim do style.css
    ======================== */
