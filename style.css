@@ -323,7 +323,7 @@ img{ max-width:100%; display:block; }
   justify-content:center;
   background:
     linear-gradient(135deg, rgba(134,88,51,.22), rgba(0,0,0,0)),
-    url("fotos/logo-vanelle.jpeg");
+    url("fotos/logo-vanelle.png");
   background-size:cover;
   background-position:center;
 }
