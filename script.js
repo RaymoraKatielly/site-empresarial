@@ -101,7 +101,7 @@ document.addEventListener("DOMContentLoaded", () => {
      Troque APENAS aqui depois para atualizar tudo.
   ========================= */
  document.addEventListener("DOMContentLoaded", () => {
-  const WHATS_NUMBER = "556699143397"; // 55 + DDD + número
+  const WHATS_NUMBER = "5566999143397"; // 55 + DDD + número
   const INSTAGRAM_URL = "https://instagram.com/morenarosaartebeleza";
 
   const message =
