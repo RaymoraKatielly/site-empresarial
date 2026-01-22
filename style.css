@@ -750,6 +750,28 @@ details p{
   align-items: center;
 }
 
+.ecosystem{
+  padding:4rem 0;
+  background:#f7f4ee;
+}
+
+.ecosystem h2{
+  margin-bottom:.5rem;
+}
+/* Aqui cada negócio ganha página própria depois */
+.ecosystem-grid{
+  margin-top:2rem;
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(240px,1fr));
+  gap:1.5rem;
+}
+
+.eco-card{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:1.5rem;
+}
 /* ========================
    Fim do style.css
    ======================== */
