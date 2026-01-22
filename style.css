@@ -320,7 +320,7 @@ img{ max-width:100%; display:block; }
   width:100%;
   background:
     linear-gradient(135deg, rgba(134,88,51,.18), rgba(0,0,0,0)),
-    url("fotos/logo-vanelle.png");
+    url("fotos/logo-vanelle.jpeg");
   background-size:cover;
   background-position:center;
   border-bottom:1px solid var(--border);
