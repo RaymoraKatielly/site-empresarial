@@ -413,7 +413,7 @@ img{ max-width:100%; display:block; }
   height: 260px;
   background:
     linear-gradient(135deg, rgba(0,0,0,.12), rgba(0,0,0,0)),
-    url("assets/img/galeria-interior.jpg");
+    url("fotos/logo-vanelle.png");
   background-size:cover;
   background-position:center;
 }
