@@ -316,12 +316,14 @@ img{ max-width:100%; display:block; }
   box-shadow: var(--shadow);
 }
 .hero-img{
-  height:190px;
-  position:relative;
-  display:flex;
-  align-items:flex-end;
-  justify-content:center;
-  padding-bottom:1rem;
+  height:320px;/* AQUI aumenta o tamanho */
+  width:100%;
+  background:
+    linear-gradient(135deg, rgba(134,88,51,.18), rgba(0,0,0,0)),
+    url("fotos/logo-vanelle.png");
+  background-size:cover;
+  background-position:center;
+  border-bottom:1px solid var(--border);
 }
 
 .hero-logo{
