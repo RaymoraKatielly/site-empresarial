@@ -727,3 +727,105 @@ details p{
   .cards-grid{ grid-template-columns: 1fr; }
   .hero-img{ height:240px; }
 }
+/* ========================
+   Fim do Style.css
+   ======================== */
+
+   /* ==================================================
+   PATCH MÍNIMO – ESTABILIZAÇÃO DE GRID E COLUNAS
+   Galeria Vanelle
+   ================================================== */
+
+/* 1) Base obrigatória para evitar quebra de grid/flex */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* 2) Impede estouro horizontal que quebra colunas */
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* 3) Mídias nunca estouram container */
+img, svg, video, iframe {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 4) Em grid/flex, filhos precisam poder encolher */
+.hero-grid > *,
+.grid-2 > *,
+.cards-grid > *,
+.contact-grid > *,
+.footer-inner > * {
+  min-width: 0;
+}
+
+/* ================= HERO ================= */
+
+/* Garante grid estável no hero */
+.hero-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+}
+
+/* Hero badges sempre ocupam a linha inteira */
+.hero-badges {
+  grid-column: 1 / -1;
+}
+
+/* ================= GRID 2 COLUNAS ================= */
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+}
+
+/* ================= CARDS / NEGÓCIOS ================= */
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+/* Proteção extra: se algo que NÃO seja card cair aqui,
+   ele ocupa a linha inteira (não vira coluna) */
+.cards-grid > :not(.biz-card) {
+  grid-column: 1 / -1;
+}
+
+/* ================= CONTATO ================= */
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+}
+
+/* ================= FOOTER ================= */
+
+.footer-inner {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+/* ================= RESPONSIVO ================= */
+
+@media (max-width: 900px) {
+  .hero-grid,
+  .grid-2,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-badges {
+    justify-content: flex-start;
+  }
+}
