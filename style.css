@@ -790,6 +790,46 @@ details p{
   .testimonials { grid-template-columns: 1fr; }
   .contact-grid { grid-template-columns: 1fr; }
 }
+
+/* ===== HOTFIX: remover layout em colunas/grade indevida ===== */
+
+/* Nunca deixe esses virarem colunas tipo jornal */
+body, .section, .section-alt, .container{
+  columns: auto !important;
+  column-count: auto !important;
+  column-gap: normal !important;
+}
+
+/* Nunca deixe esses virarem grid/flex globalmente */
+.section, .section-alt, .container{
+  display: block !important;
+}
+
+/* Agora sim: grids apenas onde faz sentido */
+.grid-2{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.testimonials{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.contact-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+/* Responsivo */
+@media (max-width: 860px){
+  .grid-2{ grid-template-columns: 1fr; }
+  .testimonials{ grid-template-columns: 1fr; }
+  .contact-grid{ grid-template-columns: 1fr; }
+}
 /* ========================
    Fim do style.css
    ======================== */
